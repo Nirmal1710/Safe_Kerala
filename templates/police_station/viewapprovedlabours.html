@@ -1,0 +1,41 @@
+{% extends "police_station/index.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table  class="table table-bordered">
+    <tr>
+      <th>Sno</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>DOB</th>
+      <th>Maerital status</th>
+      <th>Native Address</th>
+      <th>Current Address</th>
+      <th>Identification Mark</th>
+      <th>Photo</th>
+      <th>Adhar Card</th>
+      <th>Finger print</th>
+      <th>Job Type</th>
+      <th>Phone</th>
+      <th> </th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.labourname }}</td>
+      <td>&nbsp;{{ i.gender }}</td>
+      <td>&nbsp;{{ i.dob }}</td>
+      <td>&nbsp;{{ i.marital_status }}</td>
+      <td>&nbsp;{{ i.native_place }}<br/>{{ i.native_city }}<br>{{ i.native_state }}<br>{{ i.native_pin }}</td>
+      <td>&nbsp;{{ i.current_place }}<br>{{ i.current_district }}</td>
+      <td>{{ i.identification_mark1 }}<br/>{{ i.identification_mark2 }}</td>
+      <td>&nbsp;<img src="{{ i.photo }}" width="100px" height="100px"/></td>
+      <td>&nbsp;{{ i.adarcard }}</td>
+      <td><img src="{{i.fingerprint }}" width="100px" height="100px"/></td>
+      <td>{{ i.job_type }}</td>
+      <td>{{ i.phone }}</td>
+      {% comment %} <td><a href="/myapp/blocklabor/{{ i.id }}" class="btn btn-danger" onclick="return confirm('Do you want to block this labor')">Block</a></td> {% endcomment %}
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

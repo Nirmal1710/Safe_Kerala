@@ -1,0 +1,41 @@
+{% extends "police_station/index.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+{#  <table width="200" border="1">#}
+{#    <tr>#}
+{#      <td>From</td>#}
+{#      <td><label for="textfield"></label>#}
+{#      <input type="text" name="textfield" id="textfield" /></td>#}
+{#      <td>To</td>#}
+{#      <td><label for="textfield2"></label>#}
+{#      <input type="text" name="textfield2" id="textfield2" /></td>#}
+{#      <td><input type="submit" name="button" id="button" value="Search" /></td>#}
+{#    </tr>#}
+{#  </table>#}
+  <table class="table table-bordered">
+    <tr>
+      <th>Sno</th>
+           <th>Date</th>
+      <th>UserName</th>
+           <th>LabourName</th>
+
+      <th>Report Discription</th>
+
+
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td width="50px">{{ forloop.counter }}</td>
+          <td width="120px">&nbsp;{{ i['date'] }}</td>
+      <td>&nbsp;{{ i['name'] }}</td>
+         <td>&nbsp;{{ i['labourname'] }}</td>
+{#      <td>&nbsp;{{ i['report_title'] }}</td>#}
+      <td>&nbsp;{{ i['report_descripton'] }}</td>
+
+
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "admin/index.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/myapp/addpolice_post#abc">
+  <table class="table table-bordered">
+    <tr>
+      <th width="150px">Name</th>
+      <td>
+      <input type="text" name="textfield" id="textfield" class="form-control" required  pattern="[a-z A-Z]+"/></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td>
+      <input type="email" name="textfield2" id="textfield2" class="form-control"  required/></td>
+    </tr>
+    <tr>
+      <th>Phone</th>
+      <td>
+      <input type="text" name="textfield3" id="textfield3" class="form-control" pattern="[6789][0-9]{9}"  required/></td>
+    </tr>
+    <tr>
+      <th>Place</th>
+      <td>
+      <input type="text" name="textfield4" id="textfield4" class="form-control"   required/></td>
+    </tr>
+    <tr>
+      <th>Post</th>
+      <td>
+      <input type="text" name="textfield5" id="textfield5" class="form-control"  pattern="[a-z A-Z]+" required /></td>
+    </tr>
+    <tr>
+      <th>District</th>
+      <td><select name="textfield7"  class="form-control" required >
+          <option>Alappuzha</option>
+           <option>Ernakulam</option>
+           <option>Idukki</option>
+           <option>Kannur</option>
+           <option>Kasaragod</option>
+           <option>Kollam</option>
+           <option>Kottayam</option>
+           <option>Kozhikode</option>
+           <option>Malappuram</option>
+           <option>Palakkad</option>
+           <option>Pathanamthitta</option>
+           <option>Thiruvananthapuram</option>
+           <option>Thrissur</option>
+
+           <option>Wayanad</option>
+      </select>
+
+       </td>
+    </tr>
+    <tr>
+      <th>Pincode</th>
+      <td>
+      <input type="text" name="textfield6" id="textfield6" class="form-control" pattern="[0-9]{6}"  required /></td>
+    </tr>
+    <tr>
+
+      <td colspan="2" align="center"><input type="submit" name="button" class="btn btn-success" id="button" value="Add" /></td>
+    </tr>
+  </table>
+</form>
+
+{% endblock %}

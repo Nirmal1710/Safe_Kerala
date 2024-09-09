@@ -1,0 +1,19 @@
+{% extends "police_station/index.html" %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/addconreplyps_post">
+    <input type="hidden" name="cid" id="cid" value="{{ cid }}"/>
+  <table  class="table table-hover">
+    <tr>
+      <th>Reply:
+        <label for="textarea"></label>
+        <textarea name="textarea" id="textarea" cols="45" rows="5" class="form-control" required></textarea></th>
+    </tr>
+    <tr><center>
+      <td><input type="submit" name="button" id="button" value="Send" class="btn btn-success" /></td></center>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

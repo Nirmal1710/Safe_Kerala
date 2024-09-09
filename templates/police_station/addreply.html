@@ -1,0 +1,38 @@
+{% extends "police_station/index.html" %}
+{% block body %}
+<!-- <form id="form1" name="form1" method="post" action="/myapp/addreply_post">
+      <input type="hidden" name="cid" id="cid" value="{{ cid }}"/>
+  <table  class="table table-bordered">
+    <tr>
+      <th>Reply:
+      </th>
+    </tr>
+      <tr>
+          <td>
+        <textarea name="textarea" id="textarea" cols="45" rows="5" class="form-control" required></textarea></td>
+    </tr>
+
+  </table>
+ <div class="text-center">
+       <input type="submit" name="button" id="button" value="Send" class="btn btn-success" />
+   </div>
+</form> -->
+
+<form method="POST">
+<table  class="table table-bordered">
+<tr>
+  <th>Reply:
+  </th>
+</tr>
+  <tr>
+      <td>
+    <textarea name="textarea" id="textarea" cols="45" rows="5" class="form-control" required></textarea></td>
+</tr>
+
+</table>
+<div class="text-center">
+   <input type="submit" name="button" id="button" value="Send" class="btn btn-success" />
+</div>
+</form>
+
+{% endblock %}

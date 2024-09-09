@@ -1,0 +1,43 @@
+{% extends "police_station/index.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/myapp/searchcriminal1">
+<table class="pull-left">
+     <tr>
+      <td>
+      <input type="text" name="textfield" id="textfield"  class="form-control" required/></td>
+      <td><input type="submit" name="button" id="button" value="Search" class="btn btn-success" /></td>
+    </tr>
+</table><br><br>
+  <table class="table table-bordered">
+    <tr>
+      <th>Slno</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Address</th>
+      <th>AdharNo</th>
+      <th>Finger Print</th>
+      <th>DOB</th>
+      <th>Photo1</th>
+      <th>Photo2</th>
+        <th></th>
+        <th></th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td width="60px">{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.name }}</td>
+      <td>&nbsp;{{ i.gender }}</td>
+      <td>{{ i.place }} <br>&nbsp;{{ i.post }} <br>&nbsp;{{ i.district }} <br> {{ i.state }}</td>
+      <td>{{ i.adarcard }}</td>
+      <td><img src="{{ i.fingerprint }}" width="100px" height="100px"/></td>
+      <td>&nbsp;{{ i.dob }}</td>
+      <td>&nbsp;<img src="{{ i.photo1 }}" width="100px" height="100px"/></td>
+      <td><img src="{{ i.photo2 }}" width="100px" height="100px"/></td>
+      <td width="50px"><a href="/myapp/editcriminallist/{{ i.id }}" class="btn btn-info">Edit</a></td>
+      <td width="50px"><a href="/myapp/deletecriminal/{{ i.id }}" class="btn btn-danger" onclick="return confirm('Do you want to delete');">Delete</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "police_station/index.html" %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table  class="table table-bordered">
+    <tr>
+      <th>From</th>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" class="form-control" required /></td>
+      <td>To</td>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" class="form-control" required /></td>
+      <td><input type="submit" name="button" id="button" value="Go" class="btn btn-info" /></td>
+    </tr>
+  </table>
+  <table class="table table-bordered">
+    <tr>
+      <th width="46">Sno</th>
+      <th width="57">Date</th>
+      <th width="166">Contractor Details</th>
+      <th width="83">Complaint</th>
+      <th width="54">Status</th>
+      <th width="62">Reply</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i['date'] }}</td>
+      <td>&nbsp;{{ i['name'] }}<br/>{{ i['phone'] }}</td>
+      <td>&nbsp;{{ i['complaint'] }}</td>
+      <td>&nbsp;{{ i['status'] }}</td>
+      <td>{% if i['reply']=="pending" %}<a href="/addconreplyps/{{ i['complaint_id'] }}" class="btn btn-info">Reply</a>{% else %}{{ i['reply'] }}{% endif %}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

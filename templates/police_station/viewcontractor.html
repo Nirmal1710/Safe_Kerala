@@ -1,0 +1,40 @@
+{% extends "police_station/index.html" %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <th width="30">Sno</th>
+      <th width="46">Name</th>
+      <th width="58">Gender</th>
+      <th width="34">Dob</th>
+      <th width="66">Address</th>
+      <th width="87">Work Type</th>
+      <th width="49">Photo</th>
+      <th width="60">Phone</th>
+      <th>Email</th>
+      <th width="95">Adhar Card</th>
+      <th width="80">&nbsp;</th>
+      <th width="51">&nbsp;</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i['name'] }}</td>
+      <td>&nbsp;{{ i['gender'] }}</td>
+      <td>&nbsp;{{ i['dob'] }}</td>
+      <td>&nbsp;{{ i['place'] }}<br/>{{ i['post'] }}<br/>{{ i['pin'] }}<br/>{{ i['district'] }}</td>
+      <td>&nbsp;{{ i['work_type'] }}</td>
+      <td><img src="{{ i['photo'] }}" width="100px" height="100px"/></td>
+      <td>&nbsp;{{ i['phone'] }}</td>
+      <td>{{ i['Email'] }}</td>
+      <td>&nbsp;{{ i['adharcard'] }}</td>
+      <td><a href="/approvecon/{{ i['con_lid'] }}" class="btn btn-success">Approve</a></td>
+      <td><a href="/rejectcon/{{ i['con_lid'] }}" class="btn btn-danger">Reject</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

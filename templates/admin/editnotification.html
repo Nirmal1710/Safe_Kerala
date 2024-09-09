@@ -1,0 +1,17 @@
+{% extends "admin/index.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/myapp/editnotification_post">
+  <table class="table table-bordered">
+      <input type="hidden" name="N_id" id="N_id" value="{{ data.id }}"/>
+
+    <tr>
+      <th>Notification
+
+      <textarea name="textarea" id="textarea" cols="45" rows="5" class="form-control" required >{{ data.notification }}</textarea></th>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><input type="submit" class="btn btn-success" name="button" id="button" value="Add" /></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

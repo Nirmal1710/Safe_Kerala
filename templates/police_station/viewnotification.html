@@ -1,0 +1,22 @@
+{% extends "police_station/index.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/searchnotification1">
+
+  <table class="table table-bordered">
+    <tr>
+      <th>Slno</th>
+      <th >Date</th>
+      <th>Notification</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td width="50px"> {{ forloop.counter }}</td>
+      <td width="150px">&nbsp;{{ i.date }}</td>
+      <td>&nbsp;{{ i.notification }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+</form>
+
+{% endblock %}

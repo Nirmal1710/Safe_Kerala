@@ -1,0 +1,53 @@
+{% extends "admin/index.html" %}
+{% block body %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>
+{#    This Criminal#}
+</h1>
+<form>
+{#    {% for i in  %}#}
+
+
+
+
+    <table class="table table-bordered table-hover table-stripped">
+        <tr>
+            <th>Name</th>
+            <th>{{ data['name'] }}<br>
+            <img src="{{ data['photo1'] }}" width="100px" height="100px"/>
+{#                <img src="{{ data['photo2'] }}" width="100px" height="100px"/>#}
+            </th>
+        </tr> <tr>
+            <th>Gender</th>
+            <th>{{ data['gender'] }}</th>
+        </tr> <tr>
+            <th>Address</th>
+            <th>{{ data['place'] }} <br>{{ data['post'] }} <br>{{ data['district'] }} <br>{{ data['state'] }}</th>
+        </tr>
+
+        <tr>
+            <th>Dob</th>
+            <th>{{ data['dob'] }}</th>
+        </tr> <tr>
+            <th>Adharnumber</th>
+            <th>{{ data['adarcard'] }}</th>
+        </tr>
+        <tr>
+            <th></th>
+            <th></th>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
+
+{% endblock %}

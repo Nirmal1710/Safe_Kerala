@@ -1,0 +1,119 @@
+{% extends "police_station/index.html" %}
+{% block body %}
+<form action="/myapp/addlabour_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table  class="table table-hover">
+    <tr>
+      <th width="210px">Name</th>
+      <td>
+      <input type="text" name="textfield" id="textfield" class="form-control" pattern="[A-Za-z ]+" required /></td>
+    </tr>
+    <tr>
+      <th>Gender</th>
+      <td>
+           <select class="form-control" name="radio" required>
+              <option value="male">Male</option>
+              <option value="female">FeMale</option>
+              <option value="others">Others</option>
+          </select>
+      </td>
+    </tr>
+    <tr>
+      <th>DOB</th>
+      <td>
+      <input type="date" name="textfield2" id="textfield2" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <th>Marital Status</th>
+      <td>
+      <input type="text" name="textfield3" id="textfield3" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <th>Native Place</th>
+      <td>
+      <input type="text" name="textfield4" id="textfield4" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <th>Native City</th>
+      <td>
+      <input type="text" name="textfield5" id="textfield5" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <th>Native State</th>
+      <td>
+      <input type="text" name="textfield6" id="textfield6" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <th>Native Pin</th>
+      <td>
+      <input type="text" name="textfield7" id="textfield7" class="form-control" pattern="[0-9]{6}" required/></td>
+    </tr>
+    <tr>
+      <th>Current Place</th>
+      <td>
+      <input type="text" name="textfield8" id="textfield8"  class="form-control" required/></td>
+    </tr>
+    <tr>
+      <th>Current District</th>
+      <td>
+        <input type="text" name="textfield9" id="textfield9" class="form-control" required />
+        </td>
+    </tr>
+       <tr>
+      <th>AdharCard</th>
+      <td>
+      <input type="text" name="adar" id="textfield12"  class="form-control" pattern="[0-9]{12}" required/></td>
+    </tr>
+    <tr>
+      <th>FingerPrint</th>
+      <td>
+      <input type="file" name="fileField2" id="fileField2" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <th>Identification mark1</th>
+      <td>
+      <input type="text" name="textfield10" id="textfield10" class="form-control" required /></td>
+    </tr>
+
+    <tr>
+      <th>Identificaton mark2</th>
+      <td>
+      <input type="text" name="textfield11" id="textfield11" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <th>Photo1</th>
+      <td>
+      <input type="file" name="fileField" id="fileField" class="form-control" required /></td>
+    </tr>
+      <tr>
+          <th>Job Type</th>
+          <td><select name="j" class="form-control" required>
+              <option>Any</option>
+              <option>Electrical</option>
+              <option>Painter</option>
+              <option>Construction</option>
+              <option>Plumbing</option>
+              <option>Automobile</option>
+              <option>Cleaning</option>
+              <option>Porting</option>
+              <option>Driving</option>
+
+          </select> </td>
+      </tr>
+       <tr>
+      <th> Phone</th>
+      <td>
+      <input type="text" name="textfield12" id="textfield12" class="form-control" pattern="[0-9]{10}" required /></td>
+    </tr>
+        <tr>
+      <th> Email</th>
+      <td>
+      <input type="email" name="textfield13" id="textfield13" class="form-control"  required /></td>
+    </tr>
+    <tr>
+        <td></td>
+      <td ><input type="submit" name="button" id="button" value="Save" class="btn btn-success" /></td></center>
+    </tr>
+  </table>
+</form>
+
+{% endblock %}

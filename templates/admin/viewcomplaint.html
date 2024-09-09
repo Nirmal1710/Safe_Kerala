@@ -1,0 +1,25 @@
+{% extends "admin/index.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table  class="table table-bordered">
+    <tr>
+      <th>Sno</th>
+      <th>Date</th>
+        <th>User</th>
+      <th>Complaint</th>
+
+      <th>Reply</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td width="50px">&nbsp;{{forloop.counter}}</td>
+      <td width="120px">&nbsp;{{i.date }}</td>
+      <td>&nbsp;{{ i.USER.username }}</td>
+      <td>&nbsp;{{ i.complaint }}</td>
+      <td>&nbsp;{{ i.reply }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+
+{% endblock %}

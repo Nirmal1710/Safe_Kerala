@@ -1,0 +1,50 @@
+{% extends 'police_station/index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/sendcomplaint_post">
+    <div id="printableArea">
+  <table class="table table-bordered" >
+    <tr>
+      <td><p>
+          Total Workers Registered
+      </p>
+      </td>
+        <th>{{ total }}</th>
+    </tr>
+     <tr>
+      <td><p>Total Workers Approved</p>
+      </td>
+        <th>{{ approved }}</th>
+    </tr>
+
+       <tr>
+      <td><p>Total Workers Rejected</p>
+      </td>
+        <th>{{ rejected }}</th>
+    </tr>
+
+       <tr>
+      <td><p>Total Workers Pending</p>
+      </td>
+        <th>{{ pending }}</th>
+    </tr>
+
+  </table>
+    </div>
+    <input type="button" onclick="printDiv('printableArea')" value="Print"  class="btn btn-primary"/>
+    <script>
+        function printDiv(divName) {
+     var printContents = document.getElementById(divName).innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}
+    </script>
+</form>
+</body>
+{% endblock %}

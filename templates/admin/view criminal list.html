@@ -1,0 +1,47 @@
+{% extends "admin/index.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/myapp/searchcriminal#abc">
+
+
+<table class="left-pull">
+    <td>    <input type="text" name="textfield" id="textfield" class="form-control" required/>
+</td>
+    <td>    <input type="submit" name="button" id="button" value="Search" class="btn btn-success" />
+</td>
+
+</table>
+{#  <p>#}
+{#    <label for="textfield"></label>#}
+{#    <input type="text" name="textfield" id="textfield" class="form-control" required/>#}
+{#    <input type="submit" name="button" id="button" value="Search" class="btn btn-success" />#}
+{#  </p>#}
+<br><br>
+  <table  class="table table-bordered">
+    <tr>
+      <th>Sno</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Address</th>
+      <th>AdharNo</th>
+      <th>FigerPrint</th>
+      <th>DOB</th>
+      <th>Photo1</th>
+      <th>Photo2</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td width="50px">{{ forloop.counter }}</td>
+      <td>{{ i.name }}&nbsp;</td>
+      <td>{{ i.gender }}</td>
+      <td>{{ i.place }} <br>{{ i.post }} <br>{{ i.district }} <br>{{ i.state }}</td>
+      <td>&nbsp;{{ i.adarcard }}</td>
+      <td><img src="{{ i.fingerprint }}" width="100px" height="100px"/></td>
+      <td>&nbsp;{{ i.dob }}</td>
+      <td>&nbsp;<img src="{{ i.photo1 }}" width="100px" height="100px"/></td>
+      <td><img src="{{ i.photo2 }}" width="100px" height="100px"/></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+
+{% endblock %}

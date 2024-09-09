@@ -1,0 +1,39 @@
+{% extends "admin/index.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/myapp/searchnotification">
+  <table class="pull-left">
+      <tr>
+          <th>From</th>
+          <td> <input type="date" name="textfield" id="textfield" class="form-control" required /></td>
+          <th>To</th>
+          <td> <input type="date" name="textfield2" id="textfield2" class="form-control"  required/></td>
+          <td>  <input type="submit" class="btn btn-success" name="button" id="button" value="Search" /></td>
+      </tr>
+
+
+
+
+  </table>
+<br>
+<br>
+  <table class="table table-bordered">
+    <tr>
+      <th>Sno</th>
+      <th>Date</th>
+      <th>Notification</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td width="50px">&nbsp;{{ forloop.counter }}</td>
+      <td width="120px">&nbsp;{{ i.date }}</td>
+      <td>{{ i.notification }}</td>
+      <td width="50px"><a href="/myapp/editnotification/{{ i.id }}" class="btn btn-info">Edit</a></td>
+      <td width="50px"><a href="/myapp/deletenotification/{{ i.id }}" class="btn btn-danger" onclick="return confirm('Do you want to delete');">Delete</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+
+{% endblock %}

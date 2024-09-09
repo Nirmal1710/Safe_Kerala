@@ -1,0 +1,72 @@
+{% extends "police_station/index.html" %}
+{% block body %}
+<form action="/myapp/editcriminallist_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table class="table table-hover">
+             <input type="hidden" name="c_id" id="c_id" value="{{ data.id }}"/>
+    <tr>
+      <th>Name</th>
+      <td>
+      <input type="text" name="textfield" id="textfield" value="{{ data.name }}"  pattern="[A-Za-z]+" class="form-control" /></td>
+    </tr>
+    <tr>
+      <th>Gender</th>
+      <td>   <select class="form-control" name="radio" >
+              <option value="{{ data.gender }}">{{ data.gender }}</option>
+              <option value="male">Male</option>
+              <option value="female">FeMale</option>
+              <option value="others">Others</option>
+          </select></td>
+    </tr>
+    <tr>
+      <th>Place</th>
+      <td>
+      <input type="text" name="textfield2" id="textfield2" value="{{ data.place }}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <th>Post</th>
+      <td>
+      <input type="text" name="textfield3" id="textfield3" value="{{ data.post }}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <th>District</th>
+      <td>
+        <input type="text" name="text" id="select" value="{{ data.district }}" class="form-control" >
+            </td>
+    </tr>
+    <tr>
+      <th>State</th>
+      <td>
+      <input type="text" name="textfield4" id="textfield4" value="{{ data.state }}" class="form-control" /></td>
+    </tr>
+      <tr>
+      <th>AdharCard</th>
+      <td>
+      <input type="text" name="textfield7" id="textfield7" value="{{ data.adarcard }}" class="form-control" pattern="[0-9]{12}"  /></td>
+    </tr>
+    <tr>
+      <th>FingerPrint</th>
+      <td>
+      <input type="file" name="fileField3" id="fileField3" value="{{ data.fingerprint }}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <th>DOB</th>
+      <td>
+      <input type="date" name="textfield5" id="textfield5" value="{{ data.dob }}" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <th>Photo1</th>
+      <td>
+      <input type="file" name="fileField" id="fileField" value="{{ data.photo1 }}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <th>Photo2</th>
+      <td>
+      <input type="file" name="fileField2" id="fileField2" value="{{ data.photo2 }}" class="form-control" /></td>
+    </tr>
+    <tr>
+        <td></td>
+      <td><input type="submit" name="button" id="button" value="Add" class="btn btn-success" /></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}
